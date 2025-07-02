@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Managment System</title>
-    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hotel Management System</title>
+    <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-    <script src="./script.js"></script>
+    <header>
+        <h1>Hotel Management System</h1>
+    </header>
+    <main>
+        <section id="booking-section">
+            <h2>Book a Room</h2>
+            <form id="booking-form">
+                <label for="guestName">Guest Name:</label>
+                <input type="text" id="guestName" name="guestName" required />
+                <label for="roomType">Room Type:</label>
+                <select id="roomType" name="roomType" required>
+                    <option value="">Select a room type</option>
+                    <option value="single">Single</option>
+                    <option value="double">Double</option>
+                    <option value="suite">Suite</option>
+                </select>
+                <label for="checkInDate">Check-in Date:</label>
+                <input type="date" id="checkInDate" name="checkInDate" required />
+                <label for="checkOutDate">Check-out Date:</label>
+                <input type="date" id="checkOutDate" name="checkOutDate" required />
+                <button type="submit">Book Now</button>
+            </form>
+            <div id="bookingResult"></div>
+        </section>
+        <section id="availability-section">
+            <h2>Check Room Availability</h2>
+            <form id="availability-form">
+                <label for="availabilityRoomType">Room Type:</label>
+                <select id="availabilityRoomType" name="availabilityRoomType" required>
+                    <option value="">Select a room type</option>
+                    <option value="single">Single</option>
+                    <option value="double">Double</option>
+                    <option value="suite">Suite</option>
+                </select>
+                <label for="availabilityDate">Date:</label>
+                <input type="date" id="availabilityDate" name="availabilityDate" required />
+                <button type="submit">Check Availability</button>
+            </form>
+            <div id="availabilityResult"></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
