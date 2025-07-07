@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Availability</title>
+    <link rel="stylesheet" href="css/availability.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Hotel Management</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="availability.html" class="active">Availability</a></li>
+                <li><a href="prices.html">Prices</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Check Room Availability</h1>
+        
+        <div class="availability-form">
+            <form id="availabilityForm">
+                <div class="form-group">
+                    <label for="checkIn">Check-In Date:</label>
+                    <input type="date" id="checkIn" name="checkIn" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkOut">Check-Out Date:</label>
+                    <input type="date" id="checkOut" name="checkOut" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="roomType">Room Type:</label>
+                    <select id="roomType" name="roomType">
+                        <option value="all">All Rooms</option>
+                        <option value="standard">Standard Room</option>
+                        <option value="deluxe">Deluxe Room</option>
+                        <option value="suite">Suite</option>
+                    </select>
+                </div>
+
+                <button type="submit">Check Availability</button>
+            </form>
+        </div>
+
+        <div id="availabilityResults" class="results-section">
+            <h2>Available Rooms</h2>
+            <div class="results-grid">
+                <!-- Results will be populated by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Availability System.
+        </p>
+    </footer>
+
+    <script src="js/availability.js"></script>
+</body>
+</html>

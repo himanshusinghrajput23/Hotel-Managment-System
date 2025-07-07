@@ -1,0 +1,109 @@
+@import url('../css/style.css');
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.price-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+}
+
+.price-card h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 2.5rem;
+    color: #008000;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.price-details {
+    margin-top: 1.5rem;
+}
+
+.price-details h4 {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.price-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.price-details li {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.price-details li::before {
+    content: "•";
+    color: #ffd700;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.special-offers {
+    background: #f9f9f9;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    margin-top: 3rem;
+}
+
+.special-offers h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.offer-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.offer-card h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.offer-card p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.valid {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+}
