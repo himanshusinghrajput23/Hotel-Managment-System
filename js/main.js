@@ -1,3 +1,4 @@
+
 import { ROOMS, getRoomByType } from './data.js';
 
 // Initialize room cards on rooms page
@@ -5,6 +6,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const roomGrid = document.querySelector('.room-grid');
     if (roomGrid) {
         displayRooms();
+    }
+
+    // Add event listeners for login and signup forms
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            // Simple validation example
+            if (email && password) {
+                alert(`Logged in as ${email}`);
+                loginForm.reset();
+            } else {
+                alert('Please enter email and password.');
+            }
+        });
+    }
+
+    if (signupForm) {
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('signupConfirmPassword').value;
+            if (!email || !password || !confirmPassword) {
+                alert('Please fill all fields.');
+                return;
+            }
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                return;
+            }
+            alert(`Signed up as ${email}`);
+            signupForm.reset();
+        });
     }
 });
 

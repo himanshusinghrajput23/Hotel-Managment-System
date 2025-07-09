@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Review - Hotel Management System</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="js/review.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Hotel Management</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="review.html" class="active">Review</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="availability.html">Availability</a></li>
+                <li><a href="prices.html">Prices</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="review-section" style="padding: 4rem 2rem; max-width: 600px; margin: auto;">
+            <h2>Leave a Review</h2>
+            <form id="reviewForm">
+                <label for="reviewName">Name:</label>
+                <input type="text" id="reviewName" name="reviewName" required />
+
+                <label for="reviewText">Review:</label>
+                <textarea id="reviewText" name="reviewText" rows="5" required></textarea>
+
+                <button type="submit">Submit Review</button>
+            </form>
+            <div id="reviewMessage" style="margin-top: 1rem; color: green;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Feels Like Yours.</p>
+    </footer>
+</body>
+</html>
