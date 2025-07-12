@@ -1,14 +1,12 @@
 
 import { ROOMS, getRoomByType } from './data.js';
 
-// Initialize room cards on rooms page
 document.addEventListener('DOMContentLoaded', () => {
     const roomGrid = document.querySelector('.room-grid');
     if (roomGrid) {
         displayRooms();
     }
 
-    // Add event listeners for login and signup forms
     const loginForm = document.getElementById('loginForm');
     const signupForm = document.getElementById('signupForm');
 
@@ -17,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
-            // Simple validation example
             if (email && password) {
                 alert(`Logged in as ${email}`);
                 loginForm.reset();
@@ -62,11 +59,44 @@ function displayRooms() {
                 ${room.amenities.map(amenity => `<li>${amenity}</li>`).join('')}
             </ul>
         `;
+        roomCard.addEventListener('click', () => {
+            openRoomModal(room);
+        });
         roomGrid.appendChild(roomCard);
     });
 }
 
-// Handle room type selection on availability page
+function openRoomModal(room) {
+    const modal = document.getElementById('roomModal');
+    const modalRoomType = document.getElementById('modalRoomType');
+    const modalRoomPrice = document.getElementById('modalRoomPrice');
+    const modalRoomAvailability = document.getElementById('modalRoomAvailability');
+
+    modalRoomType.textContent = room.type;
+    modalRoomPrice.textContent = `Price: $${room.price.toFixed(2)} per night`;
+
+    modalRoomAvailability.textContent = `Total Rooms Available: ${room.totalRooms}`;
+
+    modal.style.display = 'block';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('roomModal');
+    const closeButton = document.getElementById('modalClose');
+
+    closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+}
+
+);
+
 function handleRoomTypeSelection() {
     const roomTypeSelect = document.getElementById('roomType');
     if (roomTypeSelect) {
@@ -84,17 +114,14 @@ function handleRoomTypeSelection() {
     }
 }
 
-// Format date for display
 function formatDate(dateString) {
     return new Date(dateString).toLocaleDateString();
 }
 
-// Format price
 function formatPrice(price) {
     return `$${price.toFixed(2)}`;
 }
 
-// Export functions for other modules
 export { 
     handleRoomTypeSelection,
     formatDate,
